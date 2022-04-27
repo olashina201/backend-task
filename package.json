@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "node --unhandled-rejections=strict ./dist/src/app.js",
     "dev": "nodemon --config nodemon.json src/app.ts",
-    "deploy": "git add . && git commit -m 'Heroku' && git push origin master && git push heroku master:main",
+    "deploy": "git add . && git commit -m 'build' && git push origin master && git push heroku master:main",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {

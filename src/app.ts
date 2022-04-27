@@ -25,7 +25,7 @@ app.use((req: Request, res: Response, next: any) => {
 });
 
 
-app.get("/test", async (req: Request, res: Response) => {
+app.get("/", async (req: Request, res: Response) => {
   res.send({ status: 200, message: "server up and running" });
 });
 

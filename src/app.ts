@@ -2,6 +2,8 @@ import express, { Response, Request } from "express";
 const app = express();
 import cors from "cors";
 
+import dotenv from "dotenv";
+dotenv.config()
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -16,8 +18,6 @@ app.use((req: Request, res: Response, next: any) => {
   );
   next();
 });
-
-
 
 
 app.get("/test", async (req: Request, res: Response) => {

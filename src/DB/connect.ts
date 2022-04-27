@@ -5,8 +5,6 @@ export const connect = async () => {
     const options = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
       autoIndex: false,
     };
     // connect you DB here

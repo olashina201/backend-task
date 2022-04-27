@@ -1,10 +1,14 @@
 import express, { Response, Request } from "express";
-const app = express();
+import {connect} from "./DB/connect";
 import cors from "cors";
-
 import dotenv from "dotenv";
 import router from "./routes";
+
+const app = express();
 dotenv.config()
+
+connect();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

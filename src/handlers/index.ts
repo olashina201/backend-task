@@ -10,7 +10,7 @@ export const postTask = async (req: Request, res: Response) => {
       duration: duration,
     });
     const saved = await newTask.save();
-    return res.send(saved);
+    return res.status(200).json({ success: true, data: saved })
   } catch (err) {
     console.log(err);
     return res.status(500).send("error");
@@ -29,7 +29,6 @@ export const getTasks = async (req: Request, res: Response) => {
 export const getTask = async (req: Request, res: Response) => {
   const {
     query: { id },
-    method,
   } = req;
   const task = await Task.findById(id);
   if (!task) {

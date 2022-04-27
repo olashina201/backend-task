@@ -3,6 +3,7 @@ const app = express();
 import cors from "cors";
 
 import dotenv from "dotenv";
+import router from "./routes";
 dotenv.config()
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,6 +24,9 @@ app.use((req: Request, res: Response, next: any) => {
 app.get("/test", async (req: Request, res: Response) => {
   res.send({ status: 200, message: "server up and running" });
 });
+
+// routes
+app.use("/api", router);
 
 const port: string | number = process.env.PORT || 8080;
 
